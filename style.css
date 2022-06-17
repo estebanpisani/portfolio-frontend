@@ -22,3 +22,17 @@ main {
 .navbar-collapse{
     flex-grow: 0;
 }
+
+#banner-container{
+    background-image: url(./assets/pexels-markus-spiske-1089440.jpg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    height: 50vh;
+    background-attachment: scroll;
+}
+.banner-content{
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(0, 0, 0, 0.3); */
+}
