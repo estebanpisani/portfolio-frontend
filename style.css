@@ -50,3 +50,18 @@ main {
 .edit-btn{
     cursor: pointer;
 }
+
+#about-personal{
+    /* position: relative; */
+}
+
+.about-photo{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    max-height: 220px;
+    max-width: 200px;
+    /* z-index: 1; */
+    object-fit: cover;
+    /* top: -8rem; */
+}
