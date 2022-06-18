@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -14,6 +18,12 @@ main {
 
 #login-btn{
     justify-self: flex-end;
+}
+
+.logo{
+    max-height: 80px;
+    /* max-height: 70px; */
+    width: 140px;
 }
 
 #nav-name{

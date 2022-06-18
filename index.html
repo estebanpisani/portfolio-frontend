@@ -15,15 +15,17 @@
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid flex-column flex-sm-row justify-content-center justify-content-sm-between">
-                <div id="logo-container" class="d-flex flex-column flex-sm-row justify-content-center flex-wrap my-2">
-                    <a class="navbar-brand" href="#">
-                        <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
-                            class="d-inline-block align-text-top">
-                        #YoProgramo
+                <div id="logo-container" class="d-flex flex-column flex-sm-row justify-content-center align-items-center flex-wrap align-content-center">
+                    <a class="navbar-brand align-items-center d-flex flex-wrap justify-content-center text-center" href="https://argentinaprograma.inti.gob.ar/">
+                        <img src="./assets/APLogo-20-20.png" alt="Argentina Programa"
+                            class="d-inline-block align-text-top logo">
+                            #YoProgramo
                     </a>
-                    <button type="button" id="login-btn" class="btn btn-success px-4 mx-3 d-block d-lg-none">Login</button>
+                    
+                    <button type="button" id="login-btn"
+                        class="btn btn-success px-4 m-3 d-block d-lg-none">Login</button>
                 </div>
 
                 <div id="nav-name" class="d-none d-lg-flex text-light justify-content-center">
@@ -34,7 +36,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMenu">
-                    <ul class="navbar-nav px-3 mb-2 mb-lg-0 flex-column flex-sm-row justify-content-evenly">
+                    <ul class="navbar-nav px-3 mb-2 mb-lg-0 flex-column flex-sm-row justify-content-evenly fs-4">
                         <li class="nav-item text-center">
                             <a class="nav-link active" aria-current="page" href="https://github.com/estebanpisani/">
                                 <i class="bi bi-github"></i>
@@ -63,9 +65,9 @@
             </div>
         </nav>
         <!-- Banner section -->
-        <div id="banner-container">
+        <div id="banner-container" class="mb-1">
             <div class="banner-content">
-                
+
             </div>
         </div>
     </header>
@@ -74,12 +76,40 @@
 
         <!-- About Section -->
 
-        <section id="about">
-
+        <section id="about"
+            class="d-flex flex-column flex-md-row p-3 justify-content-center align-items-center align-items-md-start text-center border border-dark rounded mt-3">
+            <div id="about-personal" class="m-3 w-50 d-flex flex-column justify-content-between h-100">
+                <img src="" alt="Esteban Pisani" class="border rounded-circle my-3">
+                <h1>Esteban Pisani</h1>
+                <h3>Desarrollador Full Stack Junior</h3>
+            </div>
+            <div id="about-description" class="p-3">
+                <h3>Acerca de:</h3>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item">
+                            <p class="">Desarrollador web en constante crecimiento. Serio, responsable y dispuesto a trabajar en
+                            equipo.</p>
+                        </li>
+                        <li class="list-group-item lead"><span>Estudiante</span> en <a href="https://argentinaprograma.inti.gob.ar/"><strong>Argentina
+                                    Programa</strong></a> </li>
+                        <li class="list-group-item"><i class="bi bi-envelope-fill"></i> estebanpisani@gmail.com</li>
+                        <li class="list-group-item"><i class="bi bi-geo-alt"></i> Rosario, Santa Fe, Argentina</li>
+                    </ul>
+            </div>
         </section>
         <!-- Experience Section -->
-        <section id="experience">
-
+        <section id="experience text-center" class="d-flex flex-column justify-content-center align-items-center text-center border border-dark rounded mt-2">
+            <h3>Experiencia Laboral:</h3>
+            <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item">
+                    <h5>Red Electrónica</h5>
+                    <small>Instalación y reparación de sistemas de seguridad electrónica.</small>
+                </li>
+                <li class="list-group-item lead"><span>Estudiante</span> en <a href="https://argentinaprograma.inti.gob.ar/"><strong>Argentina
+                            Programa</strong></a> </li>
+                <li class="list-group-item"><i class="bi bi-envelope-fill"></i> estebanpisani@gmail.com</li>
+                <li class="list-group-item"><i class="bi bi-geo-alt"></i> Rosario, Santa Fe, Argentina</li>
+            </ul>
         </section>
         <!-- Education Section -->
         <section id="education">
