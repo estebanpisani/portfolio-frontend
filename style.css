@@ -38,7 +38,7 @@ main {
     background-position: center;
     background-size: cover;
     object-fit: cover;
-    height: 50vh;
+    height: 60vh;
     background-attachment: scroll;
 }
 .banner-content{
