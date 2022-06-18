@@ -15,7 +15,7 @@
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid flex-column flex-sm-row justify-content-center justify-content-sm-between">
                 <div id="logo-container"
                     class="d-flex flex-column flex-sm-row justify-content-center align-items-center flex-wrap align-content-center">
@@ -78,45 +78,47 @@
 
         <!-- About Section -->
         <section id="about"
-            class="container-sm d-flex flex-column flex-md-row p-3 justify-content-between align-items-center align-items-md-start text-center border rounded mt-2">
+            class="container-sm d-flex flex-column flex-md-row p-3 justify-content-between align-items-center align-items-md-start text-center border rounded mt-2 shadow">
             <div id="about-personal" class="m-3 w-50 d-flex flex-column justify-content-between h-100">
                 <img src="" alt="Esteban Pisani" class="border rounded-circle my-3">
-                <div class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 text-center text-md-start">
+                <div
+                    class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center w-100 text-center text-md-start">
                     <h1>Esteban Pisani</h1>
-                    <i class="bi bi-pencil-square fs-4 ms-3"></i>
+                    <i class="bi bi-pencil-square fs-4 ms-3 edit-btn"></i>
                 </div>
                 <h3>Desarrollador Full Stack Junior</h3>
             </div>
             <div id="about-description"
-                class="p-3 container d-flex flex-column align-items-center align-items-md-start border rounded">
+                class="p-3 container d-flex flex-column align-items-center align-items-md-start bg-light border rounded">
                 <div
-                class="d-flex justify-content-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
-                <h3>Acerca de</h3>
-                <div class="d-flex justify-content-center">
-                    <i class="bi bi-pencil-square fs-4 mx-3 edit-btn"></i>             
+                    class="d-flex justify-content-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
+                    <h3>Acerca de</h3>
+                    <div class="d-flex justify-content-center">
+                        <i class="bi bi-pencil-square fs-4 mx-3 edit-btn"></i>
+                    </div>
                 </div>
-            </div>
-                <ul class="list-group list-group-flush text-center text-md-start">
-                    <li class="list-group-item">
+                <ul class="list-group list-group-flush text-center text-md-start bg-light">
+                    <li class="list-group-item bg-light">
                         <p class="">Desarrollador web en constante crecimiento. Serio, responsable y dispuesto a
                             trabajar en
                             equipo.</p>
                     </li>
-                    <li class="list-group-item lead"><span>Estudiante</span> en <a
+                    <li class="list-group-item lead bg-light"><span>Estudiante</span> en <a
                             href="https://argentinaprograma.inti.gob.ar/"><strong>Argentina
                                 Programa</strong></a> </li>
-                    <li class="list-group-item"><i class="bi bi-envelope-fill"></i> estebanpisani@gmail.com</li>
-                    <li class="list-group-item"><i class="bi bi-geo-alt"></i> Rosario, Santa Fe, Argentina</li>
+                    <li class="list-group-item bg-light"><i class="bi bi-envelope-fill"></i> estebanpisani@gmail.com
+                    </li>
+                    <li class="list-group-item bg-light"><i class="bi bi-geo-alt"></i> Rosario, Santa Fe, Argentina</li>
                 </ul>
             </div>
         </section>
         <!-- Experience Section -->
         <section id="experience"
-            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3">
+            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3 shadow">
             <h3>Experiencia Laboral</h3>
-            
+
             <ul class="list-group list-group-flush text-center text-md-start w-100">
-                <li class="list-group-item mb-2">
+                <li class="list-group-item mb-2 bg-light rounded">
                     <div
                         class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
                         <h4>Red Electrónica | 2021 - 2022</h4>
@@ -128,7 +130,7 @@
                     <h6>Técnico electrónico</h6>
                     <small>Instalación y reparación de sistemas de seguridad electrónica.</small>
                 </li>
-                <li class="list-group-item mb-2">
+                <li class="list-group-item mb-2 bg-light rounded">
                     <div
                         class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
                         <h4>Prioridad 1 | 2015-2021</h4>
@@ -144,12 +146,12 @@
         </section>
         <!-- Education Section -->
         <section id="education"
-            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3">
+            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3 shadow">
             <h3>Educación</h3>
 
             <div class="d-flex justify-content-center w-100">
                 <ul class="list-group list-group-flush text-center text-md-start w-100">
-                    <li class="list-group-item mb-2">
+                    <li class="list-group-item mb-2 bg-light rounded">
                         <div
                             class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
                             <h4>Argentina Programa | 2022</h4>
@@ -161,16 +163,24 @@
                         <h6>Desarrollador Full Stack</h6>
                         <p>Curso de Desarrollo Web Full Stack certificado por el INTI y el Ministerio de Desarrollo
                             Productivo de Argentina</p>
-                        <strong>Contenido:</strong>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Programación Orientada a Objetos (Java)</li>
-                            <li class="list-group-item">Base de Datos Relacionales (MySQL)</li>
-                            <li class="list-group-item">Desarrollo Back End (SpringBoot)</li>
-                            <li class="list-group-item">Desarrollo Front End (HTML, CSS, JavaScript)</li>
-                            <li class="list-group-item">Devops</li>
-                        </ul>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#education-item-content-1" aria-expanded="false"
+                            aria-controls="education-item-content-1">
+                            Leer más <i class="bi bi-chevron-compact-down"></i>
+                        </button>
+                        <div class="collapse" id="education-item-content-1">
+                            <strong>Contenido:</strong>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Programación Orientada a Objetos (Java)</li>
+                                <li class="list-group-item">Base de Datos Relacionales (MySQL)</li>
+                                <li class="list-group-item">Desarrollo Back End (SpringBoot)</li>
+                                <li class="list-group-item">Desarrollo Front End (HTML, CSS, JavaScript)</li>
+                                <li class="list-group-item">Devops</li>
+                            </ul>
+                        </div>
+
                     </li>
-                    <li class="list-group-item list-group-flush mb-2">
+                    <li class="list-group-item list-group-flush mb-2 bg-light rounded">
                         <div
                             class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
                             <h4>Egg Education | 2021</h4>
@@ -181,15 +191,23 @@
                         </div>
                         <h6>Desarrollador Full Stack</h6>
                         <p>Curso de Desarrollo Web Full Stack orientado mayormente a Back End.</p>
-                        <p>Certificado por la Universidad Nacional de Rosario, el Polo Tecnológico y el Ministerio de
+                        <p>Certificado por la Universidad Nacional de Rosario, el Polo Tecnológico y el Ministerio
+                            de
                             Trabajo de Argentina.</p>
-                        <strong>Contenido:</strong>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Programación Orientada a Objetos (Java)</li>
-                            <li class="list-group-item">Base de Datos Relacionales (MySQL)</li>
-                            <li class="list-group-item">Desarrollo Back End. Arquitectura MVC. (SpringBoot)</li>
-                            <li class="list-group-item">Desarrollo Front End (HTML, CSS)</li>
-                        </ul>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#education-item-content-2" aria-expanded="false"
+                            aria-controls="education-item-content-2">
+                            Leer más <i class="bi bi-chevron-compact-down"></i>
+                        </button>
+                        <div class="collapse" id="education-item-content-2">
+                            <strong>Contenido:</strong>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Programación Orientada a Objetos (Java)</li>
+                                <li class="list-group-item">Base de Datos Relacionales (MySQL)</li>
+                                <li class="list-group-item">Desarrollo Back End. Arquitectura MVC. (SpringBoot)</li>
+                                <li class="list-group-item">Desarrollo Front End (HTML, CSS)</li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -197,21 +215,22 @@
 
         </section>
         <!-- Skills Section -->
-        <section id="skills" class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3">
+        <section id="skills"
+            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3 shadow">
             <h3>Hard Skills</h3>
         </section>
         <!-- Projects Section -->
         <section id="projects"
-            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3">
+            class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border rounded mt-1 p-3 shadow">
             <h3>Proyectos</h3>
             <ul class="list-group list-group-flush text-center text-md-start w-100">
-                <li class="list-group-item mb-2">
+                <li class="list-group-item mb-2 bg-light rounded">
                     <div
                         class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
                         <a href="">
                             <h4>Portfolio Web</h4>
                         </a>
-                        
+
                         <div class="d-flex justify-content-center">
                             <i class="bi bi-pencil-square fs-4 mx-3 edit-btn"></i>
                             <i class="bi bi-trash3-fill fs-4 edit-btn"></i>
@@ -221,11 +240,13 @@
                     <p>Single Web Application desarrollada en Angular (HTML, CSS y TypeScript).</p>
                     <p>API Rest desarrollada con Spring Boot (framework de Java) y Base de Datos SQL (MySQL).</p>
                 </li>
-                <li class="list-group-item mb-2">
+                <li class="list-group-item mb-2 bg-light rounded">
                     <div
                         class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
-                        <a href=""><h4>Amazing Events</h4></a>
-                        
+                        <a href="">
+                            <h4>Amazing Events</h4>
+                        </a>
+
                         <div class="d-flex justify-content-center">
                             <i class="bi bi-pencil-square fs-4 mx-3 edit-btn"></i>
                             <i class="bi bi-trash3-fill fs-4 edit-btn"></i>
