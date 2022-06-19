@@ -12,6 +12,10 @@ body{
     flex-direction: column;
 }
 
+.bg-brown{
+    background-color: rgb(255, 176, 48);
+}
+
 main {
     flex-grow: 1;
 }
@@ -38,7 +42,7 @@ main {
     background-position: center;
     background-size: cover;
     object-fit: cover;
-    height: 60vh;
+    height: 45vh;
     background-attachment: scroll;
 }
 .banner-content{
