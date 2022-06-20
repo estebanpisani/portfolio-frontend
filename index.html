@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg text-orange bg-dark">
@@ -40,7 +41,8 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav px-3 mb-2 mb-lg-0 flex-column flex-sm-row justify-content-evenly fs-4">
                         <li class="nav-item text-center">
-                            <a class="nav-link text-orange" aria-current="page" href="https://github.com/estebanpisani/">
+                            <a class="nav-link text-orange" aria-current="page"
+                                href="https://github.com/estebanpisani/">
                                 <i class="bi bi-github"></i>
                             </a>
                         </li>
@@ -84,8 +86,48 @@
         <!-- About Section -->
         <section id="about"
             class="container-sm d-flex flex-column flex-md-row p-3 justify-content-between align-items-center  text-center border border-warning rounded mt-2 bg-dark shadow">
-            <div id="about-personal"
-                class="px-3 d-flex flex-column justify-content-between align-items-center h-100">
+
+            <!-- Modal -->
+            <div class="modal fade" id="ModalProfile" tabindex="-1" role="dialog" aria-labelledby="ModalProfileTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalProfileTitle">Editar Perfil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputName">Nombre</label>
+                                    <input type="text" class="form-control" id="inputName"
+                                        placeholder="Ingrese su nombre">
+                                        <label for="inputLastName">Apellido</label>
+                                    <input type="text" class="form-control" id="inputLastName"
+                                        placeholder="Ingrese su apellido">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ocupation">Ocupación</label>
+                                    <input type="text" class="form-control" id="ocupation"
+                                        placeholder="Ingrese su ocupación">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Descripción</label>
+                                    <textarea class="form-control" id="description" rows="4" placeholder="Escriba una breve descripción"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-warning">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about-personal" class="px-3 d-flex flex-column justify-content-between align-items-center h-100">
                 <img src="./assets/CV5.png" alt="Esteban Pisani"
                     class="border rounded-circle border-3 border-warning mb-3 about-photo">
                 <div
