@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
     <title>Esteban Pisani | Portfolio Web</title>
 </head>
 
 <body>
-
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg text-orange bg-dark">
+        <nav class="navbar navbar-dark navbar-expand-lg text-orange bg-dark">
             <div class="container-fluid flex-column flex-sm-row justify-content-center justify-content-sm-between">
                 <div id="logo-container"
                     class="d-flex flex-column flex-sm-row justify-content-center align-items-center flex-wrap align-content-center text-orange">
@@ -82,50 +81,66 @@
     </header>
 
     <main class="p-3">
+        <!-- Modal profile-->
+        <div class="modal fade" id="modalProfile" tabindex="-1" role="dialog" aria-labelledby="ModalProfileTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-orange" id="ModalProfileTitle">Editar Perfil</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="inputName">Nombre</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Ingrese su nombre">
+                                <label for="inputLastName">Apellido</label>
+                                <input type="text" class="form-control" id="inputLastName"
+                                    placeholder="Ingrese su apellido">
+                            </div>
+                            <div class="form-group">
+                                <label for="ocupation">Ocupación</label>
+                                <input type="text" class="form-control" id="ocupation"
+                                    placeholder="Ingrese su ocupación">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Puesto</label>
+                                <input type="text" class="form-control" id="position" placeholder="Ingrese su puesto">
+                            </div>
+                            <div class="form-group">
+                                <label for="job">Lugar de Trabajo</label>
+                                <input type="text" class="form-control" id="job"
+                                    placeholder="Ingrese su lugar de trabajo">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Ciudad</label>
+                                <input type="text" class="form-control" id="city"
+                                    placeholder="Ingrese su lugar de trabajo">
+                                <label for="country">País</label>
+                                <input type="text" class="form-control" id="country"
+                                    placeholder="Ingrese su lugar de trabajo">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Descripción</label>
+                                <textarea class="form-control" id="description" rows="4"
+                                    placeholder="Escriba una breve descripción"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-warning">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- About Section -->
         <section id="about"
             class="container-sm d-flex flex-column flex-md-row p-3 justify-content-between align-items-center  text-center border border-warning rounded mt-2 bg-dark shadow">
-
-            <!-- Modal -->
-            <div class="modal fade" id="ModalProfile" tabindex="-1" role="dialog" aria-labelledby="ModalProfileTitle"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalProfileTitle">Editar Perfil</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="inputName">Nombre</label>
-                                    <input type="text" class="form-control" id="inputName"
-                                        placeholder="Ingrese su nombre">
-                                        <label for="inputLastName">Apellido</label>
-                                    <input type="text" class="form-control" id="inputLastName"
-                                        placeholder="Ingrese su apellido">
-                                </div>
-                                <div class="form-group">
-                                    <label for="ocupation">Ocupación</label>
-                                    <input type="text" class="form-control" id="ocupation"
-                                        placeholder="Ingrese su ocupación">
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Descripción</label>
-                                    <textarea class="form-control" id="description" rows="4" placeholder="Escriba una breve descripción"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-warning">Guardar Cambios</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div id="about-personal" class="px-3 d-flex flex-column justify-content-between align-items-center h-100">
                 <img src="./assets/CV5.png" alt="Esteban Pisani"
@@ -161,6 +176,8 @@
                         </li>
                     </ul>
                 </div>
+                <button type="button" class="btn btn-success w-100 mt-3" data-toggle="modal"
+                data-target="#modalProfile">Editar Perfil</button>
             </div>
         </section>
         <!-- Experience Section -->
@@ -409,10 +426,11 @@
             <p>&copy Esteban Pisani - 2022</p>
         </div>
     </footer>
+
+    <script src="https://kit.fontawesome.com/13d25fed17.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
-    <script src="https://kit.fontawesome.com/13d25fed17.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
