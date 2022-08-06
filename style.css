@@ -8,22 +8,20 @@ a{
     color: inherit;
 }
 body{
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     color:#ffa01a;
     background-color: #1a1a1a;
+}
+
+main{
+    flex-grow: 1;
 }
 .text-orange{
     color:#ffa01a;
 }
 .bg-darker{
     background-color: #1a1a1a;
-}
-
-main {
-    flex-grow: 1;
-    /* background-image: linear-gradient(#000000,#ffa031,#000); */
-    /* background-color: #e2e2e2; */
 }
 
 #login-btn{

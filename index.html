@@ -18,25 +18,26 @@
         <nav class="navbar navbar-dark navbar-expand-lg text-orange bg-dark">
             <div class="container-fluid flex-column flex-sm-row justify-content-center justify-content-sm-between">
                 <div id="logo-container"
-                    class="d-flex flex-column flex-sm-row justify-content-center align-items-center flex-wrap align-content-center text-orange">
+                    class="d-flex flex-column flex-sm-row justify-content-center align-items-center justify-content-sm-between flex-wrap align-content-center text-orange">
                     <a class="navbar-brand align-items-center d-flex flex-wrap justify-content-center text-orange text-center"
                         href="https://argentinaprograma.inti.gob.ar/">
                         <img src="./assets/APLogo-20-20.png" alt="Argentina Programa"
                             class="d-inline-block align-text-top logo">
                         #YoProgramo
                     </a>
-
-                    <button type="button" id="login-btn"
-                        class="btn btn-warning px-4 m-3 d-block d-lg-none">Login</button>
                 </div>
-
                 <div id="nav-name" class="d-none d-lg-flex justify-content-center">
                     <h3>Esteban Pisani</h3>
                 </div>
-                <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="d-flex flex-column flex-sm-row">
+                    <button type="button" id="login-btn" class="btn btn-warning px-4 m-3 d-flex d-lg-none">
+                        Login
+                    </button>
+                    <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                        aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav px-3 mb-2 mb-lg-0 flex-column flex-sm-row justify-content-evenly fs-4">
                         <li class="nav-item text-center">
@@ -177,7 +178,7 @@
                     </ul>
                 </div>
                 <button type="button" class="btn btn-success w-100 mt-3" data-toggle="modal"
-                data-target="#modalProfile">Editar Perfil</button>
+                    data-target="#modalProfile">Editar Perfil</button>
             </div>
         </section>
         <!-- Experience Section -->
