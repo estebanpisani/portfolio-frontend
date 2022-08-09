@@ -14,14 +14,14 @@
         </div>
     </div>
     <div id="projects-content" class="collapse show w-100">
+        <li class="list-group-item list-group-item-dark rounded" *ngIf="isFail">
+            {{errorMsg}}
+        </li>
         <ul *ngFor="let proyecto of proyectoList" class="list-group list-group-flush text-center text-md-start">
-            <li class="list-group-item list-group-item-dark" *ngIf="isFail">
-                {{errorMsg}}
-            </li>
             <li *ngIf="!isFail" class="list-group-item mb-2 bg-light rounded">
                 <div
                     class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
-                        <h4>{{proyecto.nombreProyecto}}</h4>
+                    <h4>{{proyecto.nombreProyecto}}</h4>
                     <div class="d-flex justify-content-center">
                         <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-proy/{{proyecto.id}}">
                             <i class="fa-solid fa-pen-to-square"></i>
@@ -34,10 +34,12 @@
                 </div>
                 <p>{{proyecto.descripcion}}</p>
                 <div class="d-flex w-100">
-                    <a *ngIf="proyecto.websiteURL" href="{{proyecto.websiteURL}}" class="pe-3 fw-bold text-decoration-underline">
+                    <a *ngIf="proyecto.websiteURL" href="{{proyecto.websiteURL}}"
+                        class="pe-3 fw-bold text-decoration-underline">
                         Sitio Web
                     </a>
-                    <a *ngIf="proyecto.repoURL" href="{{proyecto.repoURL}}" class="pe-3 fw-bold text-decoration-underline">
+                    <a *ngIf="proyecto.repoURL" href="{{proyecto.repoURL}}"
+                        class="pe-3 fw-bold text-decoration-underline">
                         Repositorio
                     </a>
                 </div>

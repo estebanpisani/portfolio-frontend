@@ -16,14 +16,14 @@
     </div>
     <div id="education-content" class="collapse show w-100">
         <div class="d-flex justify-content-center">
+            <li class="list-group-item list-group-item-dark rounded" *ngIf="isFail">
+                {{errorMsg}}
+            </li>
             <ul class="list-group list-group-flush text-center text-md-start w-100">
-                <li class="list-group-item list-group-item-dark" *ngIf="isFail">
-                    {{errorMsg}}
-                </li>
                 <li *ngFor="let educacion of educacionList; index as i" class="list-group-item mb-2 bg-light rounded">
                     <div *ngIf="!isFail"
                         class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
-                        <a href="{{educacion.websiteURL}}">
+                        <a *ngIf="educacion.websiteURL" href="{{educacion.websiteURL}}">
                             <h4>{{educacion.nombreInstituto}}
                                 <span *ngIf="educacion.fechaInicio"> |
                                     {{educacion.fechaInicio.slice(5,7)}}/{{educacion.fechaInicio.slice(0,4)}}</span>
@@ -31,6 +31,12 @@
                                     {{educacion.fechaFin.slice(5,7)}}/{{educacion.fechaFin.slice(0,4)}}</span>
                             </h4>
                         </a>
+                        <h4 *ngIf="!educacion.websiteURL">{{educacion.nombreInstituto}}
+                            <span *ngIf="educacion.fechaInicio"> |
+                                {{educacion.fechaInicio.slice(5,7)}}/{{educacion.fechaInicio.slice(0,4)}}</span>
+                            <span *ngIf="educacion.fechaInicio && educacion.fechaFin"> -
+                                {{educacion.fechaFin.slice(5,7)}}/{{educacion.fechaFin.slice(0,4)}}</span>
+                        </h4>
                         <div class="d-flex justify-content-center">
                             <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-edu/{{educacion.id}}">
                                 <i class="fa-solid fa-pen-to-square"></i>

@@ -8,7 +8,7 @@ import { Trabajo } from '../models/trabajo';
 })
 export class TrabajoService {
 
-  trabajoURL = 'http://localhost:8080/api/trabajo';
+  trabajoURL = 'https://argentinaprograma-api.herokuapp.com/api/trabajo';
   constructor(private httpClient: HttpClient) { }
 
   public get(id:number): Observable<Trabajo>{

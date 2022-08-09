@@ -15,23 +15,23 @@
     </div>
 
     <div id="experience-content" class="collapse show w-100">
+        <li class="list-group-item list-group-item-dark rounded" *ngIf="isFail">
+            {{errorMsg}}
+        </li>
         <ul *ngFor="let trabajo of trabajoList" class="list-group list-group-flush text-center text-md-start">
-            <li class="list-group-item list-group-item-dark" *ngIf="isFail">
-                {{errorMsg}}
-            </li>
             <li *ngIf="!isFail" class="list-group-item mb-2 bg-light rounded">
                 <div
                     class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
-                        <h4>
-                            {{trabajo.nombreEmpresa}}
-                            <span *ngIf="trabajo.fechaInicio"> |
-                                {{trabajo.fechaInicio.slice(5,7)}}/{{trabajo.fechaInicio.slice(0,4)}}
-                            </span>
-                            <span *ngIf="trabajo.fechaInicio && trabajo.fechaFin">
-                                -
-                                {{trabajo.fechaFin.slice(5,7)}}/{{trabajo.fechaFin.slice(0,4)}}
-                            </span>
-                        </h4>
+                    <h4>
+                        {{trabajo.nombreEmpresa}}
+                        <span *ngIf="trabajo.fechaInicio"> |
+                            {{trabajo.fechaInicio.slice(5,7)}}/{{trabajo.fechaInicio.slice(0,4)}}
+                        </span>
+                        <span *ngIf="trabajo.fechaInicio && trabajo.fechaFin">
+                            -
+                            {{trabajo.fechaFin.slice(5,7)}}/{{trabajo.fechaFin.slice(0,4)}}
+                        </span>
+                    </h4>
                     <div *ngIf="isAdmin" class="d-flex justify-content-center">
                         <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-trab/{{trabajo.id}}">
                             <i class="fa-solid fa-pen-to-square"></i>
