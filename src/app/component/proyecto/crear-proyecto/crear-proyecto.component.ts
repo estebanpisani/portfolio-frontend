@@ -13,6 +13,7 @@ export class CrearProyectoComponent implements OnInit {
 	nombreProyecto:string='';
 	descripcion:string='';
 	websiteURL:string='';
+	repoURL:string='';
   isFail = false;
   errorMsg:string = '';
   
@@ -23,7 +24,7 @@ export class CrearProyectoComponent implements OnInit {
 
   onCreate():void{
     this.isFail = false;
-    const proyecto = new Proyecto(this.nombreProyecto,this.descripcion,this.websiteURL);
+    const proyecto = new Proyecto(this.nombreProyecto,this.descripcion,this.websiteURL, this.repoURL);
     this.proyectoService.save(proyecto).subscribe(
       data =>{
         this.router.navigate(['/']);
