@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container border shadow-lg">
+    <div class="row mt-3">
+        <div class="col-md-6 mx-md-auto text-light">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group ">
+                    <label for="nombreInstituto">Nombre Instituto</label>
+                    <input type="text" class="form-control" id="nombreInstituto" name="nombreInstituto"
+                    [(ngModel)]="nombreInstituto" required>
+                </div>
+                <div class="form-group">
+                    <label for="curso">Curso</label>
+                    <input type="text" class="form-control" id="curso" name="curso"
+                    [(ngModel)]="curso" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" cols="10" rows="5" [(ngModel)]="descripcion"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <input type="date" class="form-control" id="fechaInicio" name="fechaInicio"
+                    [(ngModel)]="fechaInicio">
+                </div>
+                <div class="form-group">
+                    <label for="fechaFin">Fecha de Finalización</label>
+                    <input type="date" class="form-control" id="fechaFin" name="fechaFin"
+                    [(ngModel)]="fechaFin" [disabled]="!fechaInicio">
+                </div>
+                <div class="form-group">
+                    <label for="websiteURL">URL Sitio Web</label>
+                    <input type="text" class="form-control" id="websiteURL" name="websiteURL"
+                    [(ngModel)]="websiteURL">
+                </div>
+                
+                <div *ngIf="f.submitted && isFail" class="alert alert-danger mt-3" >{{errorMsg}}</div>
+
+                <div class="d-flex flex-column mt-3">
+                    <button class="btn btn-block btn-success my-3">
+                        Guardar
+                    </button>
+                    <button class="btn btn-block btn-primary mb-3" routerLink="/">
+                        Volver
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

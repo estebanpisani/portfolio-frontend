@@ -1,0 +1,146 @@
+    <!-- SIDEBAR  -->
+    <div class="d-flex flex-column p-4" id="sidebar-container">
+        <div class="">
+            <div id="image-container" class="d-flex flex-column align-items-center text-center">
+            <img src="../../../assets/CV5.png" class="" id="sidebar-image" alt="Foto">
+            <h2 class="fs-1 text-center" style="font-family: 'Alegreya', serif">Desarrollador Full Stack</h2>
+            </div>
+            <hr>
+            <h6 class="form-label">Sobre mí:
+                <button *ngIf="isAdmin" type="button" class="btn text-warning" (click)="aboutEdit=!aboutEdit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </h6>
+
+            <form *ngIf="aboutEdit; else aboutBlock"  (ngSubmit)="onUpdate()">
+                <label for="aboutMe" class="form-label">Escriba una descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escriba una descripción" id="aboutMe" aria-describedby="AboutMe-Block" class="form-control" [(ngModel)]="persona.descripcion"></textarea>
+                <button type="submit" class="btn btn-block btn-success my-3">
+                    Guardar
+                </button>
+            </form>
+            <ng-template #aboutBlock>
+            <div >{{persona.descripcion}}</div>
+            </ng-template>
+
+
+
+            <hr>
+        </div>
+        <!-- PERSONAL DATA  -->
+        <div class="">
+            <div class="container-md">
+                <h3 class="text-center text-md-start text-xxl-center" style="font-family: font-titillium, sans-serif">Información personal
+                <button *ngIf="isAdmin" type="button" class="btn text-warning" (click)="dataEdit=!dataEdit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                </h3>
+
+                <form *ngIf="dataEdit; else dataBlock"  (ngSubmit)="onUpdate()">
+                    <label for="direccion" class="form-label">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" aria-describedby="Direccion-Block" class="form-control" [(ngModel)]="persona.direccion">
+                    <label for="ciudad" class="form-label">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad" aria-describedby="Ciudad-Block" class="form-control" [(ngModel)]="persona.ciudad">
+                    <label for="pais" class="form-label">País:</label>
+                    <input type="text" id="pais" name="pais" aria-describedby="Pais-Block" class="form-control" [(ngModel)]="persona.pais">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" aria-describedby="Telefono-Block" class="form-control" [(ngModel)]="persona.telefono">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" id="email" name="email" aria-describedby="Email-Block" class="form-control" [(ngModel)]="persona.email">
+                    <label for="birthdate" class="form-label">Fecha de Nacimiento:</label>
+                    <input type="date" id="birthdate" name="fechaNac" aria-describedby="Birthdate-Block" class="form-control" [(ngModel)]="persona.fechaNac">
+                    <button  class="btn btn-block btn-success my-3">
+                        Guardar
+                    </button>
+                </form>
+
+                <ng-template #dataBlock>
+                    <ul class="list-group list-group-flush bg-transparent">
+                        <li *ngIf="persona.direccion" class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-solid fa-location-dot"></i> {{persona.direccion}}.
+                        </li>
+                        <li *ngIf="persona.pais" class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-solid fa-map-location-dot"></i> {{persona.ciudad}}, {{persona.pais}}.
+                        </li>
+                        <li *ngIf="persona.telefono" class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-solid fa-square-phone"></i> {{persona.telefono}}
+                        </li>
+                        <li *ngIf="persona.email" class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-solid fa-envelope"></i> {{persona.email}}
+                        </li>
+                        
+                        <li *ngIf="persona.fechaNac" class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-solid fa-calendar-day"></i> {{persona.fechaNac}}
+                        </li>
+                    </ul>
+                </ng-template>
+                <hr> 
+            </div>             
+        </div>
+
+        <!-- LINKS  -->
+        <div class="">
+            <div class="container-md">
+                <h3 class="text-center text-md-start text-xxl-center" style="font-family: font-titillium, sans-serif">
+                    Links
+                    <button *ngIf="isAdmin" type="button" class="btn text-warning" (click)="linksEdit=!linksEdit">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                </h3>
+
+                <form *ngIf="linksEdit; else linksBlock"  (ngSubmit)="onUpdate()">
+                    <label for="repoURL" class="form-label">Repositorio en GitHub:</label>
+                    <input type="text" id="repoURL" name="repoURL" aria-describedby="Repo-Block" class="form-control" [(ngModel)]="persona.repoURL">
+                    <label for="linkedInURL" class="form-label">Perfil en LinkedIn</label>
+                    <input type="text" id="linkedInURL" name="linkedInURL" aria-describedby="LinkedInURL-Block" class="form-control" [(ngModel)]="persona.linkedInURL">
+                    <label for="websiteURL" class="form-label">Sitio Web:</label>
+                    <input type="text" id="websiteURL" name="websiteURL" aria-describedby="WebsiteURL-Block" class="form-control" [(ngModel)]="persona.websiteURL">
+                    <button  class="btn btn-block btn-success my-3">
+                        Guardar
+                    </button>
+                </form>               
+
+                <ng-template #linksBlock>
+                    <ul class="list-group list-group-flush bg-transparent">
+
+                        <a href="{{persona.repoURL}}" target="_blank" class="bg-transparent list-group-item text-warning text-center text-md-start text-xxl-center" aria-current="page">
+                            <i class="fa-brands fa-github"></i> Repositorio en GitHub.
+                        </a>
+                        <a href="{{persona.linkedInURL}}" target="_blank" class="bg-transparent list-group-item text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-brands fa-linkedin"></i> Perfil en LinkedIn
+                        </a>
+                        <a href="{{persona.websiteURL}}" target="_blank" class="bg-transparent list-group-item text-warning text-center text-md-start text-xxl-center">
+                            <i class="fa-solid fa-globe"></i> Sitio web
+                        </a>
+                    </ul>
+                </ng-template>
+                <hr>
+            </div>
+        </div>
+        <!-- SKILLS  -->
+        <div class="">
+            <div class="container-md">
+                <h3 class="text-center text-md-start text-xxl-center" style="font-family: font-titillium, sans-serif">Skills</h3>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                        <i class="fa-brands fa-java"></i> Java
+                    </li>
+                    <li class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                        <i class="fa-solid fa-leaf"></i> Spring Framework
+                    </li>
+                    <li class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                        <i class="fa-brands fa-html5"></i> HTML5
+                    </li>
+                    <li class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                        <i class="fa-brands fa-css3-alt"></i> CSS3
+                    </li>
+                    <li class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                        <i class="fa-brands fa-js"></i> JavaScript
+                    </li>
+                    <li class="list-group-item bg-transparent text-warning text-center text-md-start text-xxl-center">
+                        <i class="fa-solid fa-database"></i> MySQL
+                    </li>
+                </ul>
+            </div>    
+        </div>
+    </div>

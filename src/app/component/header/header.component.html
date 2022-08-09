@@ -1,0 +1,89 @@
+<!-- <nav id="navbar" class="navbar navbar-expand-md pb-3 header">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning fs-1" style="font-family: 'Alegreya', serif" href="#">{{persona.nombre}} {{persona.apellido}}</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item px-2">
+                <a class="nav-link text-warning" href="#educacion-section">Educación I.T.</a>
+            </li>
+            <li class="nav-item px-2">
+                <a class="nav-link text-warning" href="#experiencia-section">Experiencia Laboral</a>
+            </li>
+            <li class="nav-item px-2">
+                <a class="nav-link text-warning" href="#proyectos-section">Proyectos Web</a>
+            </li>
+            <li class="nav-item px-3">
+                <a *ngIf="!isLogged" class="btn btn-outline-warning" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
+            </li>
+            <li class="nav-item px-3">
+                <a *ngIf="isLogged" class="btn btn-outline-warning" (click)="onLogOut()"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+            </li>
+        </ul>
+    </div>
+</nav> -->
+
+<nav class="navbar navbar-dark navbar-expand-lg text-orange bg-dark">
+    <div class="container-fluid flex-column flex-sm-row justify-content-center justify-content-sm-between">
+        <div id="logo-container"
+            class="d-flex flex-column flex-sm-row justify-content-center align-items-center justify-content-sm-between flex-wrap align-content-center text-orange">
+            <a class="navbar-brand align-items-center d-flex flex-wrap justify-content-center text-orange text-center"
+                href="https://argentinaprograma.inti.gob.ar/">
+                <img src="./assets/APLogo-20-20.png" alt="Argentina Programa"
+                    class="d-inline-block align-text-top logo">
+                #YoProgramo
+            </a>
+        </div>
+        <div id="nav-name" class="d-none d-lg-flex justify-content-center">
+            <h3>{{persona.nombre}} {{persona.apellido}}</h3>
+        </div>
+        <div class="d-flex flex-column flex-sm-row">
+
+            <button type="button" *ngIf="!isLogged" routerLink="/login" id="login-btn" class="btn btn-warning px-4 m-3 d-flex d-lg-none">
+                Iniciar Sesión
+            </button>
+            <a *ngIf="isLogged" class="btn btn-outline-warning d-flex d-lg-none px-4 m-3" (click)="onLogOut()">
+                Cerrar Sesión
+            </a>
+
+            <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav px-3 mb-2 mb-lg-0 flex-column flex-sm-row justify-content-evenly fs-4">
+                <li class="nav-item text-center">
+                    <a class="nav-link text-orange" aria-current="page" href="{{persona.repoURL}}">
+                        <i class="fa-brands fa-github text-orange"></i>
+                    </a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link text-orange" href="{{persona.linkedInURL}}">
+                        <i class="fa-brands fa-linkedin text-orange"></i>
+                    </a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link text-orange" href="{{persona.websiteURL}}">
+                        <i class="fa-brands fa-instagram text-orange"></i>
+                    </a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link text-orange" href="mailto:{{persona.email}}">
+                        <i class="fa-solid fa-envelope text-orange"></i>
+                    </a>
+                </li>
+                <li class="nav-item text-center d-none d-lg-flex">
+                    <button *ngIf="!isLogged" routerLink="/login" type="button"
+                        class="btn btn-warning px-4 mx-3">Iniciar Sesión</button>
+                    <button *ngIf="isLogged" class="btn btn-outline-warning px-4 mx-3" (click)="onLogOut()">
+                        Cerrar Sesión
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="banner-container">
+    <div class="banner-content">
+    </div>
+</div>

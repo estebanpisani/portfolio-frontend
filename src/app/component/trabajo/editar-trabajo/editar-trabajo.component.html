@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="container border shadow-lg">
+    <div class="row mt-5">
+        <div class="col-md-6 mx-md-auto text-light">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreEmpresa">Nombre Empresa</label>
+                    <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa"
+                        [(ngModel)]="trabajo.nombreEmpresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="puesto">Puesto</label>
+                    <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="trabajo.puesto"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea type="text" class="form-control" rows="6" id="descripcion" name="descripcion"
+                        [(ngModel)]="trabajo.descripcion"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <input type="date" class="form-control" id="fechaInicio" name="fechaInicio"
+                        [(ngModel)]="trabajo.fechaInicio">
+                </div>
+                <div class="form-group">
+                    <label for="fechaFin">Fecha de Finalización</label>
+                    <input type="date" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="trabajo.fechaFin"
+                        value="fechaFin" [disabled]="!trabajo.fechaInicio">
+                </div>
+                <div class="form-group">
+                    <label for="websiteURL">Sitio Web</label>
+                    <input type="text" class="form-control" id="websiteURL" name="websiteURL"
+                        [(ngModel)]="trabajo.websiteURL">
+                </div>
+                <div *ngIf="f.submitted && isFail" class="alert alert-danger mt-3">{{errorMsg}}</div>
+                <div class="d-flex flex-column mt-3">
+                    <button class="btn btn-block btn-success my-3">
+                        Guardar
+                    </button>
+                    <button class="btn btn-block btn-primary mb-3" routerLink="/">
+                        Volver
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

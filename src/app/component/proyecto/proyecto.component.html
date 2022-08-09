@@ -1,0 +1,83 @@
+<section id="projects"
+    class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border border-warning rounded mt-3 p-3 bg-dark shadow">
+    <div
+        class="d-flex justify-content-center justify-content-md-between align-items-center w-100 flex-wrap text-center text-md-start">
+        <h3>
+            Proyectos <i class="fa-solid fa-chevron-down edit-btn" data-bs-toggle="collapse"
+                data-bs-target="#projects-content" aria-expanded="true" aria-controls="projects-content">
+            </i>
+        </h3>
+        <div *ngIf="isAdmin" class="col-md-4 col-2 text-end text-md-end text-xxl-end">
+            <button type="button" class="btn text-warning fs-4" routerLink="new-proy">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <div id="projects-content" class="collapse show w-100">
+        <ul *ngFor="let proyecto of proyectoList" class="list-group list-group-flush text-center text-md-start">
+            <li class="list-group-item list-group-item-dark" *ngIf="isFail">
+                {{errorMsg}}
+            </li>
+            <li *ngIf="!isFail" class="list-group-item mb-2 bg-light rounded">
+                <div
+                    class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
+                        <h4>{{proyecto.nombreProyecto}}</h4>
+                    <div class="d-flex justify-content-center">
+                        <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-proy/{{proyecto.id}}">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button *ngIf="isAdmin" type="button" class="btn"
+                            (click)="borrarProyecto(proyecto.nombreProyecto, proyecto.id!)">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+                <p>{{proyecto.descripcion}}</p>
+                <div class="d-flex w-100">
+                    <a *ngIf="proyecto.websiteURL" href="{{proyecto.websiteURL}}" class="pe-3 fw-bold text-decoration-underline">
+                        Sitio Web
+                    </a>
+                    <a *ngIf="proyecto.websiteURL" href="{{proyecto.websiteURL}}" class="pe-3 fw-bold text-decoration-underline">
+                        Repositorio
+                    </a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</section>
+
+
+
+
+<!-- <div class="card bg-dark" id="proyectos-section">
+    <div class="container card-header">
+        <div class="row justify-content-between">
+            <div class="col-md-4 col-10">
+                <h3 class="text-center text-md-start text-xxl-center" style="font-family: font-titillium, sans-serif;">Proyectos
+                </h3>
+            </div>
+            <div *ngIf="isAdmin" class="col-md-4 col-2 text-end text-md-end text-xxl-end">
+                <button type="button" class="btn text-light " routerLink="new-proy"><i class="fa-solid fa-circle-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-dark" *ngIf="isFail">
+            {{errorMsg}}
+        </li>
+        <li *ngIf="!isFail" class="list-group-item list-group-item-dark">
+            <div *ngFor="let proyecto of proyectoList" class="card-body list-group-flush">
+                <h5 class="bg-transparent list-group-item card-title text-center text-md-start text-xxl-center px-0">
+                    <a href="{{proyecto.websiteURL}}" class= "text-dark" style="text-decoration: none;" target="_blank">{{proyecto.nombreProyecto}}</a>
+                    <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-proy/{{proyecto.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button *ngIf="isAdmin" type="button" class="btn" (click)="borrarProyecto(proyecto.nombreProyecto, proyecto.id!)"><i class="fa-solid fa-trash-can"></i></button>                                    
+                </h5>
+
+                <p class="card-text text-center text-md-start text-xxl-center">{{proyecto.descripcion}}</p>
+            </div>
+        </li>
+    </ul>
+</div> -->

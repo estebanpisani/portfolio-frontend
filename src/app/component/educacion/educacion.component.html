@@ -1,0 +1,85 @@
+<section id="education"
+    class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border border-warning rounded mt-3 p-3 bg-dark shadow">
+    <div
+        class="d-flex justify-content-center justify-content-md-between align-items-center w-100 flex-wrap text-center text-md-start">
+        <h3>
+            Educación
+            <i class="fa-solid fa-chevron-down edit-btn" data-bs-toggle="collapse" data-bs-target="#education-content"
+                aria-expanded="true" aria-controls="education-content">
+            </i>
+        </h3>
+        <div *ngIf="isAdmin" class="col-md-4 col-2 text-end text-md-end text-xxl-end">
+            <button type="button" class="btn text-warning fs-4" routerLink="new-proy">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <div id="education-content" class="collapse show w-100">
+        <div class="d-flex justify-content-center">
+            <ul class="list-group list-group-flush text-center text-md-start w-100">
+                <li class="list-group-item list-group-item-dark" *ngIf="isFail">
+                    {{errorMsg}}
+                </li>
+                <li *ngFor="let educacion of educacionList; index as i" class="list-group-item mb-2 bg-light rounded">
+                    <div *ngIf="!isFail"
+                        class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
+                        <a href="{{educacion.websiteURL}}">
+                            <h4>{{educacion.nombreInstituto}}
+                                <span *ngIf="educacion.fechaInicio"> |
+                                    {{educacion.fechaInicio.slice(5,7)}}/{{educacion.fechaInicio.slice(0,4)}}</span>
+                                <span *ngIf="educacion.fechaInicio && educacion.fechaFin"> -
+                                    {{educacion.fechaFin.slice(5,7)}}/{{educacion.fechaFin.slice(0,4)}}</span>
+                            </h4>
+                        </a>
+                        <div class="d-flex justify-content-center">
+                            <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-edu/{{educacion.id}}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button *ngIf="isAdmin" type="button" class="btn"
+                                (click)="borrarEducacion(educacion.curso, educacion.id!)">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h6>{{educacion.curso}}</h6>
+                    <p>{{educacion.descripcion}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- <div class="card bg-dark" id="educacion-section">
+    <div class="container card-header">
+        <div class="row justify-content-between">
+            <div class="col-md-4 col-10">
+                <h3 class="text-center text-md-start text-xxl-center" style="font-family: font-titillium, sans-serif;">Educación I.T.
+                </h3>
+            </div>
+            <div *ngIf="isAdmin" class="col-md-4 col-2 text-end text-md-end text-xxl-end">
+                <button type="button" class="btn text-light " routerLink="/new-edu"><i class="fa-solid fa-circle-plus"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-dark" *ngIf="isFail">
+            {{errorMsg}}
+        </li>
+        <li *ngIf="!isFail" class="list-group-item list-group-item-dark">
+            <div *ngFor="let educacion of educacionList" class="card-body list-group-flush">
+                <h5 class="bg-transparent list-group-item card-title text-center text-md-start text-xxl-center px-0">
+                    <a href="{{educacion.websiteURL}}" class= "text-dark" style="text-decoration: none;" target="_blank">{{educacion.nombreInstituto}}</a>
+                    <span *ngIf="educacion.fechaInicio"> | {{educacion.fechaInicio.slice(5,7)}}/{{educacion.fechaInicio.slice(0,4)}}</span>
+                    <span *ngIf="educacion.fechaInicio && educacion.fechaFin"> - {{educacion.fechaFin.slice(5,7)}}/{{educacion.fechaFin.slice(0,4)}}</span>
+                    
+                    <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-edu/{{educacion.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button *ngIf="isAdmin" type="button" class="btn" (click)="borrarEducacion(educacion.curso, educacion.id!)"><i class="fa-solid fa-trash-can"></i></button>                                    
+                </h5>
+                
+                <h6 class="card-title">{{educacion.curso}}</h6>
+                <p class="card-text text-center text-md-start text-xxl-center">{{educacion.descripcion}}</p>
+            </div>
+        </li>
+    </ul>
+</div> -->

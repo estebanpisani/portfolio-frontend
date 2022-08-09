@@ -1,0 +1,93 @@
+<section id="experiencia-section"
+    class="container-sm d-flex flex-column justify-content-center align-items-center align-items-md-start border border-warning rounded mt-3 p-3 bg-dark shadow">
+    <div
+        class="d-flex justify-content-center justify-content-md-between align-items-center w-100 flex-wrap text-center text-md-start">
+        <h3>
+            Experiencia Laboral <i class="fa-solid fa-chevron-down edit-btn" data-bs-toggle="collapse"
+                data-bs-target="#experience-content" aria-expanded="true" aria-controls="experience-content">
+            </i>
+        </h3>
+        <div *ngIf="isAdmin" class="col-md-4 col-2 text-end text-md-end text-xxl-end">
+            <button type="button" class="btn text-warning fs-4" routerLink="/new-trab">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="experience-content" class="collapse show w-100">
+        <ul *ngFor="let trabajo of trabajoList" class="list-group list-group-flush text-center text-md-start">
+            <li class="list-group-item list-group-item-dark" *ngIf="isFail">
+                {{errorMsg}}
+            </li>
+            <li *ngIf="!isFail" class="list-group-item mb-2 bg-light rounded">
+                <div
+                    class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center justify-content-md-between w-100 flex-wrap text-center text-md-start">
+                        <h4>
+                            {{trabajo.nombreEmpresa}}
+                            <span *ngIf="trabajo.fechaInicio"> |
+                                {{trabajo.fechaInicio.slice(5,7)}}/{{trabajo.fechaInicio.slice(0,4)}}
+                            </span>
+                            <span *ngIf="trabajo.fechaInicio && trabajo.fechaFin">
+                                -
+                                {{trabajo.fechaFin.slice(5,7)}}/{{trabajo.fechaFin.slice(0,4)}}
+                            </span>
+                        </h4>
+                    <div *ngIf="isAdmin" class="d-flex justify-content-center">
+                        <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-trab/{{trabajo.id}}">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button *ngIf="isAdmin" type="button" class="btn"
+                            (click)="borrarTrabajo(trabajo.puesto, trabajo.id!)">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+                <h6>{{trabajo.puesto}}</h6>
+                <small>{{trabajo.descripcion}}</small>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- 
+<div class="card bg-dark" id="experiencia-section">
+    <div class="container card-header">
+        <div class="row justify-content-between">
+            <div class="col-md-4 col-10">
+                <h3 class="text-center text-md-start text-xxl-center" style="font-family: font-titillium, sans-serif;">
+                    Experiencia Laboral
+                </h3>
+            </div>
+            <div *ngIf="isAdmin" class="col-md-4 col-2 text-end text-md-end text-xxl-end">
+                <button type="button" class="btn text-light " routerLink="/new-trab"><i
+                        class="fa-solid fa-circle-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-dark" *ngIf="isFail">
+            {{errorMsg}}
+        </li>
+        <li *ngIf="!isFail" class="list-group-item list-group-item-dark">
+            <div *ngFor="let trabajo of trabajoList" class="card-body list-group-flush">
+                <h5 class="bg-transparent list-group-item card-title text-center text-md-start text-xxl-center px-0">
+                    <a href="{{trabajo.websiteURL}}" class="text-dark" style="text-decoration: none;"
+                        target="_blank">{{trabajo.nombreEmpresa}}</a>
+                    <span *ngIf="trabajo.fechaInicio"> |
+                        {{trabajo.fechaInicio.slice(5,7)}}/{{trabajo.fechaInicio.slice(0,4)}}</span>
+                    <span *ngIf="trabajo.fechaInicio && trabajo.fechaFin"> -
+                        {{trabajo.fechaFin.slice(5,7)}}/{{trabajo.fechaFin.slice(0,4)}}</span>
+                    <button *ngIf="isAdmin" type="button" class="btn" routerLink="edit-trab/{{trabajo.id}}"><i
+                            class="fa-solid fa-pen-to-square"></i></button>
+                    <button *ngIf="isAdmin" type="button" class="btn"
+                        (click)="borrarTrabajo(trabajo.puesto, trabajo.id!)"><i
+                            class="fa-solid fa-trash-can"></i></button>
+                </h5>
+
+                <h6 class="card-title">{{trabajo.puesto}}</h6>
+                <p class="card-text text-center text-md-start text-xxl-center">{{trabajo.descripcion}}</p>
+            </div>
+        </li>
+    </ul>
+</div> -->

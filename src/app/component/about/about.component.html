@@ -1,0 +1,75 @@
+<section id="about"
+    class="container-sm d-flex flex-column flex-md-row p-3 justify-content-between align-items-center  text-center border border-warning rounded mt-2 bg-dark shadow">
+
+    <div *ngIf="!dataEdit" id="about-personal"
+        class="px-3 d-flex flex-column justify-content-between align-items-center h-100">
+        <img *ngIf="persona.fotoURL" src="{{persona.fotoURL}}" alt="Esteban Pisani"
+            class="border rounded-circle border-3 border-warning mb-3 about-photo">
+        <img *ngIf="!persona.fotoURL" src="https://freepikpsd.com/file/2019/10/default-user-profile-image-png-2-Transparent-Images.png" alt="Esteban Pisani"
+            class="border rounded-circle border-3 border-warning mb-3 about-photo">
+        <div class="d-flex flex-column justify-content-center flex-sm-row justify-content-sm-center w-100 text-center">
+            <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+        </div>
+        <h3>Desarrollador Full Stack</h3>
+    </div>
+    <div id="about-description"
+        class="p-3 container-sm d-flex flex-column align-items-center align-self-lg-start align-items-md-start border border-warning rounded">
+        <div
+            class="d-flex align-items-center justify-content-center justify-content-md-between w-100 flex-wrap text-center text-md-start mb-3">
+            <h3>Acerca de</h3>
+        </div>
+        <div id="about-content" class="w-100">
+
+            <form *ngIf="dataEdit; else dataBlock" (ngSubmit)="onUpdate()" class="d-flex flex-column align-items-start">
+                <label for="nombre" class="form-label my-2">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" aria-describedby="Nombre-Block" class="form-control"
+                    [(ngModel)]="persona.nombre">
+                <label for="apellido" class="form-label my-2">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" aria-describedby="Apellido-Block" class="form-control"
+                    [(ngModel)]="persona.apellido">
+                <label for="aboutMe" class="form-label my-2">Escriba una descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escriba una descripción"
+                    id="aboutMe" aria-describedby="AboutMe-Block" class="form-control"
+                    [(ngModel)]="persona.descripcion"></textarea>
+                <label for="ciudad" class="form-label my-2">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" aria-describedby="Ciudad-Block" class="form-control"
+                    [(ngModel)]="persona.ciudad">
+                <label for="pais" class="form-label my-2">País:</label>
+                <input type="text" id="pais" name="pais" aria-describedby="Pais-Block" class="form-control"
+                    [(ngModel)]="persona.pais">
+                <label for="email" class="form-label my-2">Email:</label>
+                <input type="text" id="email" name="email" aria-describedby="Email-Block" class="form-control"
+                    [(ngModel)]="persona.email">
+                <label for="fotoURL" class="form-label my-2">Foto URL:</label>
+                <input type="text" id="fotoURL" name="fotoURL" aria-describedby="Foto-Block" class="form-control"
+                    [(ngModel)]="persona.fotoURL">
+                <button class="btn btn-block btn-success my-3">
+                    Guardar
+                </button>
+            </form>
+
+            <ng-template #dataBlock>
+                <ul class="list-group list-group-flush text-center text-md-start bg-light border rounded">
+                    <li class="list-group-item bg-light">
+                        <p class="">{{persona.descripcion}}</p>
+                    </li>
+                    <li class="list-group-item lead bg-light"><span>Estudiante</span> en <a
+                            href="https://argentinaprograma.inti.gob.ar/"><strong>Argentina
+                                Programa</strong></a>
+                    </li>
+                    <li *ngIf="persona?.email" class="list-group-item bg-light"><i class="bi bi-geo-alt"></i>
+                        <i class="fa-solid fa-envelope"></i> {{persona.email}}.
+                    </li>
+                    <li *ngIf="persona.pais" class="list-group-item bg-light"><i class="bi bi-geo-alt"></i>
+                        <i class="fa-solid fa-location-dot"></i> {{persona.ciudad}}, {{persona.pais}}.
+                    </li>
+                </ul>
+
+                <button *ngIf="isAdmin" (click)="dataEdit=!dataEdit" type="button" class="btn btn-success w-100 mt-3"
+                    data-toggle="modal" data-target="#modalProfile">Editar
+                    Perfil</button>
+            </ng-template>
+
+        </div>
+    </div>
+</section>
