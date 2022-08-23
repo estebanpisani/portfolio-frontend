@@ -33,9 +33,6 @@ export class HeaderComponent implements OnInit {
     this.personaService.getPersona().subscribe(
       data=>{
         this.persona = data;
-      },
-      err=>{
-        console.log(err);
       }
     )
   }

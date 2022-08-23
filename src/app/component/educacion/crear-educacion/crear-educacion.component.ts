@@ -34,7 +34,6 @@ export class CrearEducacionComponent implements OnInit {
       err => {
         this.isFail=true;
         this.errorMsg=err.error.mensaje;
-        console.log(err);
       }
     );
   }

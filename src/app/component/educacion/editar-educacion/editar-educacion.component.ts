@@ -27,7 +27,6 @@ export class EditarEducacionComponent implements OnInit {
       },
       err =>{
         this.isFail=true;
-        console.log(err);
         this.errorMsg=err.error.mensaje;
         this.router.navigate(['/']);
       }
@@ -39,13 +38,11 @@ export class EditarEducacionComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.educacionService.edit(id, this.educacion).subscribe(
       data=>{
-        console.log('Estudio Actualizado.');
         this.router.navigate(['/']);
       },
       err=>{
         this.isFail=true;
         this.errorMsg=err.error.mensaje;
-        console.log(err);
       }
     )   
   }

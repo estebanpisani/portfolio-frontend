@@ -39,7 +39,6 @@ export class TrabajoComponent implements OnInit {
       err=>{
         this.isFail=true;
         this.errorMsg=err.error.mensaje;
-        console.log(err);
       }
     );
   }
@@ -51,7 +50,6 @@ export class TrabajoComponent implements OnInit {
           this.cargarTrabajo();
         },
         err =>{
-          console.log(err);
           this.errorMsg=err.error.mensaje;
           this.cargarTrabajo();
         }

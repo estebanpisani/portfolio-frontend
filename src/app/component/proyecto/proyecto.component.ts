@@ -37,7 +37,6 @@ export class ProyectoComponent implements OnInit {
       err=>{
         this.isFail=true;
         this.errorMsg=err.error.mensaje;
-        console.log(err);
       }
     );
   }
@@ -48,7 +47,6 @@ export class ProyectoComponent implements OnInit {
           this.cargarProyecto();
         },
         err =>{
-          console.log(err);
           this.errorMsg=err.error.mensaje;
           this.cargarProyecto();
         }

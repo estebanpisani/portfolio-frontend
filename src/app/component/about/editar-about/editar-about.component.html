@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container border shadow-lg">
+    <div class="row mt-3">
+        <div class="col-md-6 mx-md-auto text-light">
+            <h3 class="text-center text-warning">Editar datos:</h3>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <label for="nombre" class="form-label my-2 text-warning">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" aria-describedby="Nombre-Block" class="form-control"
+                    [(ngModel)]="persona.nombre">
+                <label for="apellido" class="form-label my-2 text-warning">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" aria-describedby="Apellido-Block" class="form-control"
+                    [(ngModel)]="persona.apellido">
+                <label for="aboutMe" class="form-label my-2 text-warning">Escriba una descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escriba una descripción"
+                    id="aboutMe" aria-describedby="AboutMe-Block" class="form-control"
+                    [(ngModel)]="persona.descripcion"></textarea>
+                <label for="ciudad" class="form-label my-2 text-warning">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" aria-describedby="Ciudad-Block" class="form-control"
+                    [(ngModel)]="persona.ciudad">
+                <label for="pais" class="form-label my-2 text-warning">País:</label>
+                <input type="text" id="pais" name="pais" aria-describedby="Pais-Block" class="form-control"
+                    [(ngModel)]="persona.pais">
+                <label for="email" class="form-label my-2 text-warning">Email:</label>
+                <input type="text" id="email" name="email" aria-describedby="Email-Block" class="form-control"
+                    [(ngModel)]="persona.email">
+                <label for="linkedInURL" class="form-label my-2 text-warning">Perfil de LinkedIn:</label>
+                <input type="text" id="linkedInURL" name="linkedInURL" aria-describedby="linkedInURL-Block" class="form-control"
+                    [(ngModel)]="persona.linkedInURL">
+                <label for="repoURL" class="form-label my-2 text-warning">Perfil de GitHub:</label>
+                <input type="text" id="repoURL" name="repoURL" aria-describedby="repoURL-Block" class="form-control"
+                    [(ngModel)]="persona.repoURL">
+                <label for="websiteURL" class="form-label my-2 text-warning">Perfil de Instagram:</label>
+                <input type="text" id="websiteURL" name="websiteURL" aria-describedby="Website-Block"
+                    class="form-control" [(ngModel)]="persona.websiteURL">
+                <label for="fotoURL" class="form-label my-2 text-warning">Foto URL:</label>
+                <input type="text" id="fotoURL" name="fotoURL" aria-describedby="Foto-Block" class="form-control"
+                    [(ngModel)]="persona.fotoURL">
+                <div *ngIf="f.submitted && isFail" class="alert alert-danger mt-3">{{errorMsg}}</div>
+                <div class="d-flex flex-column mt-3">
+                    <button class="btn btn-block btn-success my-3">
+                        Guardar
+                    </button>
+                    <button class="btn btn-block btn-primary mb-3" routerLink="/">
+                        Volver
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

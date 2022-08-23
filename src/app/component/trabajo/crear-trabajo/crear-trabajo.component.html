@@ -2,33 +2,34 @@
 <div class="container border shadow-lg">
     <div class="row mt-5">
         <div class="col-md-6 mx-md-auto text-light">
+            <h3 class="text-center text-warning">Agregar Experiencia Laboral:</h3>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreEmpresa">Nombre Empresa</label>
+                    <label for="nombreEmpresa" class="form-label my-2 text-warning">Nombre Empresa</label>
                     <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa"
                         [(ngModel)]="nombreEmpresa" required>
                 </div>
                 <div class="form-group">
-                    <label for="puesto">Puesto</label>
+                    <label for="puesto" class="form-label my-2 text-warning">Puesto</label>
                     <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="puesto" required>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripción</label>
+                    <label for="descripcion" class="form-label my-2 text-warning">Descripción</label>
                     <textarea type="text" class="form-control" id="descripcion" name="descripcion" style="white-space: pre-wrap"
                         [(ngModel)]="descripcion"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <label for="fechaInicio" class="form-label my-2 text-warning">Fecha de Inicio</label>
                     <input type="date" class="form-control" id="fechaInicio" name="fechaInicio"
                         [(ngModel)]="fechaInicio">
                 </div>
                 <div class="form-group">
-                    <label for="fechaFin">Fecha de Finalización</label>
+                    <label for="fechaFin" class="form-label my-2 text-warning">Fecha de Finalización</label>
                     <input type="date" min="fechaInicio" class="form-control" id="fechaFin" name="fechaFin"
                         [(ngModel)]="fechaFin" [disabled]="!fechaInicio">
                 </div>
                 <div class="form-group">
-                    <label for="websiteURL">Sitio Web</label>
+                    <label for="websiteURL" class="form-label my-2 text-warning">Sitio Web</label>
                     <input type="text" class="form-control" id="websiteURL" name="websiteURL" [(ngModel)]="websiteURL">
                 </div>
                 <div *ngIf="f.submitted && isFail" class="alert alert-danger mt-3">{{errorMsg}}</div>

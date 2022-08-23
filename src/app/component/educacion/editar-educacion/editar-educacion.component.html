@@ -2,33 +2,34 @@
 <div class="container border shadow-lg">
     <div class="row mt-3">
         <div class="col-md-6 mx-md-auto text-light">
+            <h3 class="text-center text-warning">Editar datos:</h3>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreInstituto">Nombre Instituto</label>
+                    <label for="nombreInstituto" class="form-label my-2 text-warning">Nombre Instituto</label>
                     <input type="text" class="form-control" id="nombreInstituto" name="nombreInstituto"
                     [(ngModel)]="educacion.nombreInstituto" required>
                 </div>
                 <div class="form-group">
-                    <label for="curso">Curso</label>
+                    <label for="curso" class="form-label my-2 text-warning">Curso</label>
                     <input type="text" class="form-control" id="curso" name="curso"
                     [(ngModel)]="educacion.curso" required>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripción</label>
+                    <label for="descripcion" class="form-label my-2 text-warning">Descripción</label>
                     <textarea type="text" class="form-control" id="descripcion" name="descripcion"
                     [(ngModel)]="educacion.descripcion" rows="10"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <label for="fechaInicio" class="form-label my-2 text-warning">Fecha de Inicio</label>
                     <input type="date" class="form-control" id="fechaInicio" name="fechaInicio"
                     [(ngModel)]="educacion.fechaInicio">
                 </div>
-                <div class="form-group">
+                <div class="form-group" class="form-label my-2 text-warning">
                     <label for="fechaFin">Fecha de Finalización</label>
                     <input type="date" class="form-control" id="fechaFin" name="fechaFin"
                     [(ngModel)]="educacion.fechaFin" [disabled]="!educacion.fechaInicio">
                 </div>
-                <div class="form-group">
+                <div class="form-group" class="form-label my-2 text-warning">
                     <label for="websiteURL">URL Sitio Web</label>
                     <input type="text" class="form-control" id="websiteURL" name="websiteURL"
                     [(ngModel)]="educacion.websiteURL">

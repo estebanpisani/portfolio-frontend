@@ -60,13 +60,11 @@ export class AboutComponent implements OnInit {
     this.isFail = false;
     this.personaService.edit(this.persona.id!, this.persona).subscribe(
       data => {
-        console.log(data);
         this.router.navigate(['/']);
       },
       err => {
         this.isFail = true;
         this.errorMsg = err.error.mensaje;
-        console.log(err);
       }
     )
   }

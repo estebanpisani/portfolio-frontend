@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
         this.isLogged = false;
         this.isLoginFail=true;
         this.errorMsg=err.error.message;
-        console.log(err);
       }
     )
   }

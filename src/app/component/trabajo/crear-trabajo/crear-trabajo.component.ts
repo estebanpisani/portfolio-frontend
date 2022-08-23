@@ -34,7 +34,6 @@ export class CrearTrabajoComponent implements OnInit {
       err => {
         this.isFail=true;
         this.errorMsg=err.error.mensaje;
-        console.log(err);
       }
     );
   }

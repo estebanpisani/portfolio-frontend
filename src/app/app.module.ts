@@ -26,6 +26,7 @@ import { proyInterceptorProvider } from './service/interceptors/proy-interceptor
 import { trabInterceptorProvider } from './service/interceptors/trab-interceptor.service';
 import { AboutComponent } from './component/about/about.component';
 import { SkillComponent } from './component/skill/skill.component';
+import { EditarAboutComponent } from './component/about/editar-about/editar-about.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { SkillComponent } from './component/skill/skill.component';
     LoginComponent,
     RegistroComponent,
     AboutComponent,
-    SkillComponent
+    SkillComponent,
+    EditarAboutComponent
   ],
   imports: [
     BrowserModule,

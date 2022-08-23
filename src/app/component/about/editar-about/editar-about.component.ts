@@ -1,31 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Persona } from 'src/app/models/persona';
-import { PersonaService } from 'src/app/service/persona.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenService } from 'src/app/service/token.service';
+import { PersonaService } from './../../../service/persona.service';
+import { Persona } from './../../../models/persona';
 
 @Component({
-  selector: 'app-skill',
-  templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.css']
+  selector: 'app-editar-about',
+  templateUrl: './editar-about.component.html',
+  styleUrls: ['./editar-about.component.css']
 })
-export class SkillComponent implements OnInit {
-
-  persona: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "", "", "");
+export class EditarAboutComponent implements OnInit {
   isFail = false;
-  errorMsg: string = '';
+  errorMsg:string = '';
   aboutEdit = false;
   dataEdit = false;
   linksEdit = false;
   isAdmin = false;
   roles: string[] = [];
+  persona: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "", "", "");
 
-  constructor(
-    private personaService: PersonaService,
+  constructor(private personaService: PersonaService,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
     private tokenService: TokenService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.cargarPersona();
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(rol => {
@@ -40,16 +39,13 @@ export class SkillComponent implements OnInit {
     this.isFail = false;
   }
 
-  cargarPersona(): void {
+    cargarPersona(): void {
     this.aboutEdit = false;
     this.dataEdit = false;
     this.linksEdit = false;
     this.personaService.getPersona().subscribe(
       data => {
         this.persona = data;
-      },
-      err => {
-        console.log(err);
       }
     )
   }

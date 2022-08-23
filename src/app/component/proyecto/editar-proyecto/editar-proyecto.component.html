@@ -2,24 +2,25 @@
 <div class="container border shadow-lg">
     <div class="row mt-3 my-md-5">
         <div class="col-12 col-md-6 mx-md-auto text-light">
+            <h3 class="text-center text-warning">Editar datos:</h3>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group py-3">
-                    <label for="nombreEmpresa">Nombre del Proyecto</label>
+                    <label for="nombreEmpresa" class="form-label my-2 text-warning">Nombre del Proyecto</label>
                     <input type="text" class="form-control" id="nombreProyecto" name="nombreProyecto"
                         [(ngModel)]="proyecto.nombreProyecto" required>
                 </div>
                 <div class="form-group py-3">
-                    <label for="descripcion">Descripción</label>
+                    <label for="descripcion" class="form-label my-2 text-warning">Descripción</label>
                     <textarea type="text" class="form-control" id="descripcion" name="descripcion"
                         [(ngModel)]="proyecto.descripcion"></textarea>
                 </div>
                 <div class="form-group py-3">
-                    <label for="websiteURL">Sitio Web</label>
+                    <label for="websiteURL" class="form-label my-2 text-warning">Sitio Web</label>
                     <input type="text" class="form-control" id="websiteURL" name="websiteURL"
                         [(ngModel)]="proyecto.websiteURL">
                 </div>
                 <div class="form-group py-3">
-                    <label for="repoURL">Repositorio URl</label>
+                    <label for="repoURL" class="form-label my-2 text-warning">Repositorio URL</label>
                     <input type="text" class="form-control" id="repoURL" name="repoURL"
                         [(ngModel)]="proyecto.repoURL">
                 </div>

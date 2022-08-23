@@ -27,7 +27,6 @@ export class EditarTrabajoComponent implements OnInit {
         this.trabajo=data;
       },
       err=>{
-        console.log(err);
         this.errorMsg=err.error.mensaje;
       }
     )
@@ -42,7 +41,6 @@ export class EditarTrabajoComponent implements OnInit {
       err=>{
         this.isFail=true;
         this.errorMsg=err.error.mensaje;
-        console.log(err);
       }
     )   
   }
